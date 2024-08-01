@@ -4,7 +4,13 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 # Chargement des données
-data = pd.read_csv('phishing_url.xlsx')
+#data = pd.read_csv('phishing_url.xlsx')
+
+# Lecture du fichier Excel
+data = pd.read_excel('phishing_url.xlsx')
+
+# Affichage des premières lignes du dataframe
+print(data.head())
 
 # Sélection des caractéristiques
 X = data[['IsDomainIP', 'HasObfuscation', 'IsHTTPS', 'HasExternalFormSubmit', 'HasCopyrightInfo']]
